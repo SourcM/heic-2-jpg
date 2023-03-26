@@ -1,5 +1,8 @@
 # heic-2-jpg
 
+## Author
+Ali M Bukar
+
 ## License
 The code of heic-2-jpg is released under the MIT License.
 
