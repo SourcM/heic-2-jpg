@@ -1,2 +1,4 @@
 # heic-2-jpg
-Convert heic to jpeg
+
+## License
+The code of face.evoLVe is released under the MIT License.
