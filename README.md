@@ -12,7 +12,6 @@ Please refer to [this page]([https://www.google.com](https://pypi.org/project/py
 ## Usage
 1. Clone this repo
 2. Run the command
-...```python3 convert_heic_to_jpg.py -i /fullpath/to/source/directory -o /fullpath/to/destination/directory 
-   ```
+```python3 convert_heic_to_jpg.py -i /fullpath/to/source/directory -o /fullpath/to/destination/directory```
 3. Append ```-r``` to the command if you intend to get the images resized to 1k (1024 x 768)
 4. Append ```-s``` to the command if the images are contained with subdirectories
