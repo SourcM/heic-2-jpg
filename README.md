@@ -6,7 +6,7 @@ The code of heic-2-jpg is released under the MIT License.
 ## Pre-Requisite Installations
 * pip install --upgrade pip
 * pip install pyheif
-* Please refer to [this page]([https://www.google.com](https://pypi.org/project/pyheif/)) if you have problems with pyhreif
+* Refer to [this page](https://pypi.org/project/pyheif/) if you have problems with pyhreif
 
 ## Usage
 1. Clone this repo
