@@ -20,14 +20,14 @@ def check_size(image):
 
 def convert_image(fullpath, do_resize):
     heif_file = pyheif.read(fullpath)
-            image = Image.frombytes(
-                heif_file.mode, 
-                heif_file.size, 
-                heif_file.data,
-                "raw",
-                heif_file.mode,
-                heif_file.stride,
-                )
+    image = Image.frombytes(
+        heif_file.mode, 
+        heif_file.size, 
+        heif_file.data,
+        "raw",
+        heif_file.mode,
+        heif_file.stride,
+        )
 
     if do_resize:
         new_dim = check_size(image)
@@ -40,6 +40,7 @@ def main(args):
     input_directory = args.input_path
     output_directory = args.output_path
     do_resize = args.resize
+    exts = ('.HEIC', '.heic')
 
     if args.subdirectories:
 
@@ -48,13 +49,17 @@ def main(args):
                 filepath = os.path.join(root, f)
                 fname = os.path.splitext(os.path.basename(filepath))[0]
 
+                fext = os.path.splitext(os.path.basename(filepath))[1]
+                if fext not in exts:
+                    continue
+
                 dirname = os.path.dirname(filepath)
                 subdirname = os.path.basename(os.path.dirname(filepath))
                 output_subdir = os.path.join(output_directory, subdirname)
 
                 #create subdirectory in destination if it doesn't exist
                 if not os.path.exists(output_subdir):
-                    os.makedirs(path)
+                    os.makedirs(output_subdir)
                 #convert image
                 image = convert_image(filepath, do_resize)
                 output_img_name = os.path.join(output_subdir, fname+'.jpg')
@@ -66,6 +71,10 @@ def main(args):
         for file in tqdm(os.listdir(input_directory)):
             fname = os.path.splitext(file)[0]
             fullpath = os.path.join(input_directory, file)
+
+            fext = os.path.splitext(file)[1]
+            if fext not in exts:
+                continue
             
             image = convert_image(fullpath, do_resize)
             output_img_name = os.path.join(output_directory, fname+'.jpg')
