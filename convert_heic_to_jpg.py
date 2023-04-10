@@ -15,6 +15,8 @@ def check_size(image):
     elif height > 1024:
         new_height = 1024
         new_width = int(new_height*width/height)
+    else:
+        new_width, new_height = width, height
 
     return (new_width, new_height)
 
