@@ -81,7 +81,7 @@ def parse_args():
     
     '''
     parser = argparse.ArgumentParser(description=description)
-    parser.add_argument('-i', '--input_path', action='store', help='absolute path to the heic images directory', required=True)
+    parser.add_argument('-i', '--input_path', action='store', help='absolute path to the png images directory', required=True)
     parser.add_argument('-s', '--subdirectories', help='are the images in subdirectories?', required=False, action='store_true',  default=False)
     parser.add_argument('-r', '--resize', help='do you want to resize the image to 1k image?', required=False, action='store_true',  default=False)
             
